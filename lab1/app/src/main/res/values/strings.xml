@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">lab1</string>
+    <string name="input_field">Введіть ваш текст</string>
+    <string name="first_font">Adamina</string>
+    <string name="second_font">Aldrich</string>
+    <string name="third_font">Bahiana</string>
+    <string name="button_left">Ok</string>
+    <string name="Button_right">Cancel</string>
+    <string name="no_input">Введіть текст</string>
+</resources>
