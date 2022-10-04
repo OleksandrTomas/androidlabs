@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText text_field;
     private TextView result;
     private RadioGroup radio_group;
-    private Typeface tf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else{
                     int radio_id=radio_group.getCheckedRadioButtonId();
-                    findRadioButton(radio_id);
-                    result.setTypeface(tf);
+                    result.setTypeface(Typeface.createFromAsset(getAssets(),findRadioButton(radio_id)));
                     String text= text_field.getText().toString();
                     result.setText(text);
                 }
@@ -55,17 +53,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void findRadioButton(int radio_id) {
+     public String findRadioButton(int radio_id) {
         switch (radio_id){
             case R.id.f_font:
-                tf= Typeface.createFromAsset(getAssets(), "fonts/Adamina-Regular.ttf");
-                break;
+                return getString(getResources().getIdentifier("Adamina_path", "string", getPackageName()));
             case R.id.s_font:
-                tf= Typeface.createFromAsset(getAssets(), "fonts/Aldrich-Regular.ttf");
-                break;
+                return getString(getResources().getIdentifier("Aldrich_path", "string", getPackageName()));
             case R.id.t_font:
-                tf= Typeface.createFromAsset(getAssets(), "fonts/Bahiana-Regular.ttf");
-                break;
+                return getString(getResources().getIdentifier("Bahiana_path", "string", getPackageName()));
+            default:
+                throw new IllegalStateException("Unexpected value: " + radio_id);
         }
     }
 

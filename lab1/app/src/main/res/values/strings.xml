@@ -7,4 +7,7 @@
     <string name="button_left">Ok</string>
     <string name="Button_right">Cancel</string>
     <string name="no_input">Введіть текст</string>
+    <string name="Adamina_path">fonts/Adamina-Regular.ttf</string>
+    <string name="Aldrich_path">fonts/Aldrich-Regular.ttf</string>
+    <string name="Bahiana_path">fonts/Bahiana-Regular.ttf</string>
 </resources>
