@@ -1,13 +1,14 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">lab1</string>
     <string name="input_field">Введіть ваш текст</string>
     <string name="first_font">Adamina</string>
     <string name="second_font">Aldrich</string>
     <string name="third_font">Bahiana</string>
-    <string name="button_left">Ok</string>
-    <string name="Button_right">Cancel</string>
     <string name="no_input">Введіть текст</string>
     <string name="Adamina_path">fonts/Adamina-Regular.ttf</string>
     <string name="Aldrich_path">fonts/Aldrich-Regular.ttf</string>
     <string name="Bahiana_path">fonts/Bahiana-Regular.ttf</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ok">OK</string>
+    <string name="cancel">CANCEL</string>
 </resources>

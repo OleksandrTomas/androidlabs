@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".inputFragment"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/text_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20sp"
+            android:layout_marginTop="100sp"
+            android:backgroundTint="@color/text_background"
+            android:ems="10"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:hint="@string/input_field"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textColor="@color/text"
+            android:textColorHint="@color/text_background"
+            android:textSize="30sp" />
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="100sp"
+            android:layout_marginTop="7dp"
+            android:background="@color/radio_group"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/f_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:fontFamily="@font/adamina"
+                android:text="@string/first_font"
+                android:textColor="@color/black" />
+
+            <RadioButton
+                android:id="@+id/s_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/aldrich"
+                android:text="@string/second_font"
+                android:textColor="@color/black" />
+
+            <RadioButton
+                android:id="@+id/t_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/bahiana"
+                android:text="@string/third_font"
+                android:textColor="@color/black" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="20sp"
+                android:text="@string/ok" />
+
+            <Button
+                android:id="@+id/button_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="20sp"
+                android:text="@string/cancel" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</FrameLayout>
