@@ -24,7 +24,11 @@ public class MainActivity extends AppCompatActivity implements inputFragment.Fra
     }
 
     @Override
-    public void onInputInpFrag(String input,int radio) {
-        fragmentB.updateText(input,radio);
+    public void onInputOkButton(String input, String font_type) {
+        fragmentB.updateText(input,font_type);
+    }
+    @Override
+    public void onInputCancelButton() {
+        fragmentB.clearText();
     }
 }

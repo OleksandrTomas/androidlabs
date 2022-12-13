@@ -2,8 +2,9 @@ package com.android.lab1;
 
 import android.content.Context;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
+
 import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +21,9 @@ public class inputFragment extends Fragment {
     private FragmentAListener listener;
 
     public interface FragmentAListener {
-        void  onInputInpFrag(String input,int radio);
+        void onInputOkButton(String input, String font_type);
+
+        void onInputCancelButton();
     }
 
     @Override
@@ -35,13 +38,13 @@ public class inputFragment extends Fragment {
         button_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(text_field.getText().toString().equals("")) {
+                if (text_field.getText().toString().equals("")) {
                     Toast.makeText(getActivity(), R.string.no_input, Toast.LENGTH_LONG).show();
-                }
-                else{
-                    int radio_id=radio_group.getCheckedRadioButtonId();
-                    String text= text_field.getText().toString();
-                    listener.onInputInpFrag(text,radio_id);
+                } else {
+                    int radio_id = radio_group.getCheckedRadioButtonId();
+                    String font_id = findRadioButton(radio_id);
+                    String text = text_field.getText().toString();
+                    listener.onInputOkButton(text, font_id);
                 }
             }
         });
@@ -49,24 +52,33 @@ public class inputFragment extends Fragment {
         button_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text_field.setText("");
-                listener.onInputInpFrag("",R.id.f_font);
+                listener.onInputCancelButton();
             }
         });
         return v;
     }
 
-
+    public String findRadioButton(int radio_id) {
+        switch (radio_id) {
+            case R.id.f_font:
+                return getString(getResources().getIdentifier("Adamina_path", "string", getActivity().getPackageName()));
+            case R.id.s_font:
+                return getString(getResources().getIdentifier("Aldrich_path", "string", getActivity().getPackageName()));
+            case R.id.t_font:
+                return getString(getResources().getIdentifier("Bahiana_path", "string", getActivity().getPackageName()));
+            default:
+                throw new IllegalStateException("Unexpected value: " + radio_id);
+        }
+    }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        try {listener = (FragmentAListener) context;
-        } catch (ClassCastException e){
+        try {
+            listener = (FragmentAListener) context;
+        } catch (ClassCastException e) {
             throw new ClassCastException(context.toString()
                     + " must implement FragmentBListener");
         }
     }
-
-
 }
