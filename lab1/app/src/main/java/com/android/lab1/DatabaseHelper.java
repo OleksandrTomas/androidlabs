@@ -21,6 +21,7 @@ class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS font_text");
+        onCreate(db);
     }
 
     public Boolean insertData(String path, String text) {
@@ -28,21 +29,22 @@ class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put("font_type", path);
         contentValues.put("input", text);
-        long result = db.insertOrThrow("font_text", null, contentValues);
-        if (result == -1) {
-            return false;
-        } else {
-            return true;
-        }
+        return db.insert("font_text", null, contentValues) != -1;
     }
 
     public void deleteData() {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("delete from "+"font_text");
     }
-    public Cursor getData() {
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM font_text;", null);;
-        return cursor;
+    public String getDataStrings() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM font_text;", null);
+        String text_data = "";
+        while (cursor.moveToNext()) {
+            String font = cursor.getString(0);
+            String text = cursor.getString(1);
+            text_data += ("* Font path: " + font + " | Text: " + text + "\n");
+        }
+        return text_data;
     }
 }
