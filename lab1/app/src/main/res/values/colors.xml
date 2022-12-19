@@ -11,5 +11,9 @@
     <color name="background_second">#98F3F1</color>
     <color name="text">#000033</color>
     <color name="text_background">#808080</color>
+    <color name="media_background">#80E080</color>
     <color name="radio_group">#FFFFFF</color>
+    <color name="buttons_color">#0006b1</color>
+    <color name="buttons_text_color">#FFFFFF</color>
+
 </resources>

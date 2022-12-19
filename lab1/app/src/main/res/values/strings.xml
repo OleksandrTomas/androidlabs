@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">lab3</string>
+    <string name="app_name">lab4</string>
     <string name="input_field">Введіть ваш текст</string>
     <string name="first_font">Adamina</string>
     <string name="second_font">Aldrich</string>
@@ -14,4 +14,13 @@
     <string name="openStorage">OPEN STORAGE</string>
     <string name="success">"Дані успішно збережено"</string>
     <string name="clear_tablet">CLEAR TABLET</string>
+    <string name="openMedia">OPEN MEDIA</string>
+    <string name="play">PLAY</string>
+    <string name="pause">PAUSE</string>
+    <string name="stop">STOP</string>
+    <string name="music">MUSIC</string>
+    <string name="internal_video">INTERNAL VIDEO</string>
+    <string name="internet_video">INTERNET VIDEO</string>
+    <string name="put_url">Введіть посилання</string>
+
 </resources>

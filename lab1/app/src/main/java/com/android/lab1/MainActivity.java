@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements inputFragment.Fra
     private inputFragment fragmentA;
     private outputFragment fragmentB;
     Button button_storage;
+    Button button_media;
     DatabaseHelper DataBase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,16 @@ public class MainActivity extends AppCompatActivity implements inputFragment.Fra
                 .commit();
 
         button_storage = findViewById(R.id.open_Storage);
+        button_media = findViewById(R.id.open_Media);
         DataBase = new DatabaseHelper(this);
+
+        button_media.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MediaActivity.class);
+                startActivity(intent);
+            }
+        });
         button_storage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

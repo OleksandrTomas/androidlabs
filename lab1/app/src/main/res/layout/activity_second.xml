@@ -21,7 +21,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20sp"
-        android:layout_marginBottom="50sp"
-        android:text="@string/clear_tablet" />
+        android:layout_marginBottom="30sp"
+        android:text="@string/clear_tablet"
+        android:backgroundTint="@color/buttons_color"
+        android:textColor="@color/buttons_text_color"/>
 
 </LinearLayout>

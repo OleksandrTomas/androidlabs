@@ -24,17 +24,31 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:gravity="bottom">
 
         <Button
-            android:id="@+id/open_Storage"
-            android:layout_width="wrap_content"
+            android:id="@+id/open_Media"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginHorizontal="20sp"
             android:layout_marginBottom="50sp"
-            android:layout_weight="1"
-            android:text="@string/openStorage" />
+            android:maxHeight="10sp"
+            android:text="@string/openMedia"
+            android:backgroundTint="@color/buttons_color"
+            android:textColor="@color/buttons_text_color"/>
+
+        <Button
+            android:id="@+id/open_Storage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30sp"
+            android:text="@string/openStorage"
+            android:layout_marginHorizontal="20sp"
+            android:backgroundTint="@color/buttons_color"
+            android:textColor="@color/buttons_text_color"/>
+
     </LinearLayout>
 </LinearLayout>
