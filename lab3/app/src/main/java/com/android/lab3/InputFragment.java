@@ -1,4 +1,4 @@
-package com.android.lab1;
+package com.android.lab3;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class inputFragment extends Fragment {
+public class InputFragment extends Fragment {
 
     private EditText text_field;
     private RadioGroup radio_group;

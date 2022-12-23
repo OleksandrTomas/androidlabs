@@ -1,4 +1,4 @@
-package com.android.lab1;
+package com.android.lab3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,10 +9,10 @@ import android.widget.Button;
 import android.widget.Toast;
 
 
-public class MainActivity extends AppCompatActivity implements inputFragment.FragmentAListener {
+public class MainActivity extends AppCompatActivity implements InputFragment.FragmentAListener {
 
-    private inputFragment fragmentA;
-    private outputFragment fragmentB;
+    private InputFragment fragmentA;
+    private OutputFragment fragmentB;
     Button button_storage;
     DatabaseHelper DataBase;
     @Override
@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity implements inputFragment.Fra
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        fragmentA = new inputFragment();
-        fragmentB = new outputFragment();
+        fragmentA = new InputFragment();
+        fragmentB = new OutputFragment();
 
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragmentContainerView, fragmentA)
