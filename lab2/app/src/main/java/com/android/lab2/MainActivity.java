@@ -1,21 +1,21 @@
-package com.android.lab1;
+package com.android.lab2;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 
-public class MainActivity extends AppCompatActivity implements inputFragment.FragmentAListener {
+public class MainActivity extends AppCompatActivity implements InputFragment.FragmentAListener {
 
-    private inputFragment fragmentA;
-    private outputFragment fragmentB;
+    private InputFragment fragmentA;
+    private OutputFragment fragmentB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       fragmentA = new inputFragment();
-       fragmentB = new outputFragment();
+       fragmentA = new InputFragment();
+       fragmentB = new OutputFragment();
 
        getSupportFragmentManager().beginTransaction()
                .replace(R.id.fragmentContainerView, fragmentA)

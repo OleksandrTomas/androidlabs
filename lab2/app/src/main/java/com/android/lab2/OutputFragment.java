@@ -1,4 +1,4 @@
-package com.android.lab1;
+package com.android.lab2;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class outputFragment extends Fragment {
+public class OutputFragment extends Fragment {
 
     private TextView result;
 
