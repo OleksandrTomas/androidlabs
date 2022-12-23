@@ -9,10 +9,10 @@ import android.widget.Button;
 import android.widget.Toast;
 
 
-public class MainActivity extends AppCompatActivity implements inputFragment.FragmentAListener {
+public class MainActivity extends AppCompatActivity implements MainInputFragment.FragmentAListener {
 
-    private inputFragment fragmentA;
-    private outputFragment fragmentB;
+    private MainInputFragment fragmentA;
+    private MainOutputFragment fragmentB;
     Button button_storage;
     Button button_media;
     DatabaseHelper DataBase;
@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity implements inputFragment.Fra
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        fragmentA = new inputFragment();
-        fragmentB = new outputFragment();
+        fragmentA = new MainInputFragment();
+        fragmentB = new MainOutputFragment();
 
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragmentContainerView, fragmentA)

@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class inputFragment extends Fragment {
+public class MainInputFragment extends Fragment {
 
     private EditText text_field;
     private RadioGroup radio_group;

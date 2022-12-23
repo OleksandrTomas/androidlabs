@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class media_music extends Fragment {
+public class InternalMusicFragment extends Fragment {
     MediaPlayer music_player;
 
     @Override
@@ -43,19 +43,26 @@ public class media_music extends Fragment {
     }
 
     @Override
-    public void onPause(){
+    public void onPause() {
         super.onPause();
         releasePlayer();
     }
+
     public void play_music(View v) {
-        if (music_player == null){
+        if (music_player == null) {
             music_player = MediaPlayer.create(getActivity(), R.raw.pentagramma);
+            music_player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    releasePlayer();
+                }
+            });
         }
         music_player.start();
     }
 
     public void pause_music(View v) {
-        if (music_player != null){
+        if (music_player != null) {
             music_player.pause();
         }
     }
@@ -63,10 +70,11 @@ public class media_music extends Fragment {
     public void stop_music(View view) {
         releasePlayer();
     }
-    private void releasePlayer(){
-        if (music_player != null){
+
+    private void releasePlayer() {
+        if (music_player != null) {
             music_player.release();
-            music_player=null;
+            music_player = null;
         }
     }
 

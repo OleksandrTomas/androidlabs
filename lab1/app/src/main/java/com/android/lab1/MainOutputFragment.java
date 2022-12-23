@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class outputFragment extends Fragment {
+public class MainOutputFragment extends Fragment {
 
     private TextView result;
 

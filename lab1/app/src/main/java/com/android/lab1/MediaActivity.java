@@ -1,40 +1,53 @@
 package com.android.lab1;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
+
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TableLayout;
+
 
 import com.google.android.material.tabs.TabLayout;
 
 public class MediaActivity extends AppCompatActivity {
 
-    private media_music music_fragment;
-    private internal_videoFragment internal_video;
-    private internet_videoFragment internet_video;
     private TabLayout tabLayout;
-    private ViewPager viewPager;
+    private ViewPager2 viewPager;
+    private MyAdapter PagerAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_media);
 
-        tabLayout = findViewById(R.id.tablet_layout);
+        tabLayout = findViewById(R.id.tab_layout);
         viewPager = findViewById(R.id.view_pager);
 
-        tabLayout.setupWithViewPager(viewPager);
+        PagerAdapter = new MyAdapter(this);
+        viewPager.setAdapter(PagerAdapter);
 
-        VPAdapter vpAdapter = new VPAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        vpAdapter.addFragment(new media_music(), "MUSIC");
-        vpAdapter.addFragment(new internal_videoFragment(), "INTERNAL VIDEO");
-        vpAdapter.addFragment(new external_videoFragment(), "EXTERNAL VIDEO");
-        vpAdapter.addFragment(new internet_videoFragment(), "INTERNET VIDEO");
-        viewPager.setAdapter(vpAdapter);
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                tabLayout.getTabAt(position).select();
+            }
+        });
     }
 }

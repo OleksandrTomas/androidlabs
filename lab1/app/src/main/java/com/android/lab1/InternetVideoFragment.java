@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
-public class internet_videoFragment extends Fragment {
+public class InternetVideoFragment extends Fragment {
     VideoView video_internet_player;
     EditText link_text;
     @Override
@@ -34,8 +34,6 @@ public class internet_videoFragment extends Fragment {
         return v;
     }
     public void play_video(View v, MediaController mediaController){
-        mediaController.setAnchorView(video_internet_player);
-        mediaController.setMediaPlayer(video_internet_player);
         video_internet_player.setMediaController(mediaController);
         video_internet_player.start();
     }
@@ -44,6 +42,5 @@ public class internet_videoFragment extends Fragment {
     public void onPause() {
         super.onPause();
         video_internet_player.stopPlayback();
-        video_internet_player.resume();
     }
 }

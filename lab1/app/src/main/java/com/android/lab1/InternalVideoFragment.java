@@ -1,7 +1,5 @@
 package com.android.lab1;
 
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.VideoView;
 
-public class internal_videoFragment extends Fragment {
+public class InternalVideoFragment extends Fragment {
     VideoView video_player;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

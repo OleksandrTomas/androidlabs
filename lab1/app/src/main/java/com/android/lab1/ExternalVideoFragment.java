@@ -15,7 +15,7 @@ import android.widget.Toast;
 import android.widget.VideoView;
 
 
-public class external_videoFragment extends Fragment {
+public class ExternalVideoFragment extends Fragment {
     VideoView video_player;
 
     @Override
